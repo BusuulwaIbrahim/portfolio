@@ -329,7 +329,7 @@
       <div class="hero-text fade-in">
         <span class="tagline">Here to serve you</span>
         <h1 id="hero-title">Hi, I'm Busuulwa Ibrahim</h1>
-        <p>I’m  23-years-old  based in Kampala, Uganda. I’m currently pursuing my Bachelor of Computer Science and building practical skills in user-friendly digital experiences and web development.</p>
+        <p>I’m  24-years-old  based in Kampala, Uganda. I’m currently pursuing my Bachelor of Computer Science and building practical skills in user-friendly digital experiences and web development.</p>
         <div class="hero-btns" style="display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="#services" class="skeu-btn primary">See What I Do</a>
           <a href="#contact" class="skeu-btn">Get in Touch</a>
@@ -431,7 +431,10 @@
       <h2 id="contact-title" class="section-title fade-in">Let's Connect</h2>
       <p class="section-subtitle fade-in">Got any related issue in mind or just want to chat? Drop me a line.</p>
       <div class="contact-wrapper">
-        <form class="skeu-card contact-form fade-in" id="contact-form" aria-label="Contact form">
+        <form class="skeu-card contact-form fade-in" id="contact-form" action="https://formsubmit.co/busuulwaibrahim1234@gmail.com" method="POST" aria-label="Contact form">
+          <input type="hidden" name="_subject" value="New portfolio contact message">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
@@ -646,22 +649,9 @@
       const contactForm = document.getElementById('contact-form');
       const formStatus = document.getElementById('form-status');
 
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Simulate submission
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        btn.disabled = true;
-
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-          formStatus.style.color = 'var(--accent)';
-          contactForm.reset();
-          setTimeout(() => { formStatus.textContent = ''; }, 4000);
-        }, 1500);
+      contactForm.addEventListener('submit', () => {
+        formStatus.textContent = 'Sending your message...';
+        formStatus.style.color = 'var(--text-secondary)';
       });
     });
   </script>
